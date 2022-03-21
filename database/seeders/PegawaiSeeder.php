@@ -18,14 +18,16 @@ class PegawaiSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create('id_ID');
-
+ 
+        // membuat data dummy sebanyak 10 record
         for($x = 1; $x <= 10; $x++){
  
         	// insert data dummy pegawai dengan faker
-        	DB::table('users')::table('pegawai')->insert([
+        	DB::table('pegawai')->insert([
         		'nama' => $faker->name,
         		'alamat' => $faker->address,
         	]);
+ 
         }
     }
 }
